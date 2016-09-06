@@ -1,0 +1,14 @@
+{% comment %}
+	vars: page_handle
+{% endcomment %}
+{% assign page_image = "" %}
+{% assign page1 = pages[page_handle] %}
+{% if page1.content != blank %}
+  {% if page1.content contains "<img" %}
+    {% assign page_image = page1.content | split: ' src="' | last | split:'"' | first %}
+	{% elsif page1.content contains "image=" %}
+    {% assign page_image = page1.content | split: ' image="' | last | split:'"' | first %}
+  {% endif %}
+{% else %}
+  <!-- page was empty? sure you've got the right page? -->
+{% endif %}

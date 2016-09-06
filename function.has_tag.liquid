@@ -1,0 +1,11 @@
+{% assign has_tag = false %}
+{% if product %}
+{% if query %}
+  {% for tag in product.tags %}
+    {% if tag == query %}
+      {% assign has_tag = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% endif %}
+

@@ -1,0 +1,10 @@
+{% assign tag_that_contains = false %}
+{% if product %}
+{% if query %}
+  {% for tag in product.tags %}
+    {% if tag contains query %}
+      {% assign tag_that_contains = tag %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% endif %}

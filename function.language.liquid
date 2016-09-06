@@ -1,0 +1,10 @@
+{% assign language = "" %}
+{% for item in cart.items %}
+	{% if item.title contains 'Country -' %}
+		{% assign title_array = item.title | split: ' - ' %}
+		{% assign language = title_array[1] %}
+	{% endif %}
+{% endfor %}
+{% if language == "" %}
+		{% assign language = "us" %}
+{% endif %}
