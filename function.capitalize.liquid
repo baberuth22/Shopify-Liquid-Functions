@@ -1,0 +1,8 @@
+{% assign str_array = string | split: ' ' %}
+{% assign capitalize_array = "" | split: "|" %}
+{% for str in str_array %}
+		{% assign capstr = str | capitalize %}
+		{% include 'append_array', element:capstr, array:capitalize_array %}
+	{% endfor %}
+{% endfor %}
+{% assign capitalize = capitalize_array | join: ' ' %}
