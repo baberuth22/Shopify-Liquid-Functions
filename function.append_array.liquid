@@ -1,3 +1,6 @@
+{% comment %}
+	params: array, element
+{% endcomment %}
 {% assign delim = "|" %}
 {% capture appended_array %}{{ array | join: delim }}{{ delim }}{{ element }}{% endcapture %}
 {% assign append_array = appended_array | split: delim %}

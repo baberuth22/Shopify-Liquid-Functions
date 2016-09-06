@@ -1,3 +1,6 @@
+{% comment %}
+	 cart must be available, we add variants to cart of the hidden country product
+{% endcomment %}
 {% assign language = "" %}
 {% for item in cart.items %}
 	{% if item.title contains 'Country -' %}
